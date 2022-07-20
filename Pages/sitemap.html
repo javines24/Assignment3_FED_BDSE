@@ -7,6 +7,10 @@
   <title>ABC_Learning_Center</title>
   <link rel="icon" href="faviticon.png">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
   <style>
     /* Font import */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
@@ -195,7 +199,7 @@ footer a:hover {
   color: #ffb703;
 }
 
-.dropdown:hover .dropdown-content {
+.dropdown-content {
   display: block;
 }
 
@@ -211,7 +215,7 @@ footer a:hover {
     <nav id="leftnav">
       <ul>
         <li class="dropdown">
-          <button class="dropbtn">Learn</button>
+          <a href="" class="dropbtn" style="text-decoration:none;"> Learn</a>
           <!-- Dropdown -->
           <div class="dropdown-content">
           <a href="course1.html">HTML</a>
@@ -288,4 +292,19 @@ footer a:hover {
       </nav>
     </footer>
 </body>
+<script>
+  $(document).ready(function() {
+      let drp = true;
+      $('.dropdown-content').hide();
+      $('.dropdown').hover(function () {
+        if(drp === true) {
+          $('.dropdown-content').fadeIn();
+          drp = false;
+        } else {
+          $('.dropdown-content').fadeOut();
+           drp = true;
+        }
+      })
+  });
+</script>
 </html>

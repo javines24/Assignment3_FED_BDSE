@@ -253,6 +253,20 @@
         text-align:center; padding: 30px 10px; width: 100%;">Contact</a>
        </div>
     </div>
-</body>ss
-
+</body>
+<script>
+  $(document).ready(function() {
+      let drp = true;
+      $('.dropdown-content').hide();
+      $('.dropdown').hover(function () {
+        if(drp === true) {
+          $('.dropdown-content').fadeIn();
+          drp = false;
+        } else {
+          $('.dropdown-content').fadeOut();
+           drp = true;
+        }
+      })
+  });
+</script>
 </html>
